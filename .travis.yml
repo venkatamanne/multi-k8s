@@ -14,6 +14,7 @@ before_install:
   - gcloud config set project midyear-module-259904
   - gcloud config set compute/zone us-central1-a
   - gcloud container clusters get-credentials multi-cluster
+  - echo "$DOCKER_USERNAME"
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t venkatamanne/react-test -f ./client/Dockerfile.dev ./client
 
